@@ -1,0 +1,9 @@
+*.iml
+.idea
+target
+dependency-reduced-pom.xml
+.DS_Store
+**/node_modules/**
+server/target/*
+server/dependency-reduced-pom.xml
+.DS_Store
