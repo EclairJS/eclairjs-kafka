@@ -39,7 +39,14 @@ function KafkaUtils(obj) {
 }
 
 KafkaUtils.prototype.init = function(sparkContext) {
-  return (this.jar == null) ? Promise.resolve(true) : this.eclairjs.addJar(this.jar);
+  if(this.jar == null) {
+    return Promise.resolve(true);
+  }
+ 
+  return Promise.all([
+    this.eclairjs.addJar(this.jar),
+    this.sparkContext.addJar(this.jar)
+  ]);
 }
 
 KafkaUtils.prototype.createStream = function (ssc, zk, consumer_group, topic) {
