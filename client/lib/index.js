@@ -22,7 +22,9 @@
  */
 
 function KafkaUtils(obj) {
-  this.jar = obj.jar ? obj.jar : null;
+  this.jar = obj.jar 
+    ? obj.jar 
+    : "http://repo2.maven.org/maven2/org/eclairjs/eclairjs-kafka/0.10/eclairjs-kafka-0.10-jar-with-dependencies.jar";
   this.eclairjs = obj.eclairjs;
 
   if(process.env.VCAP_SERVICES) {
