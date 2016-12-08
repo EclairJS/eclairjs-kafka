@@ -45,7 +45,7 @@ KafkaUtils.prototype.init = function(sparkContext) {
  
   return Promise.all([
     this.eclairjs.addJar(this.jar),
-    this.sparkContext.addJar(this.jar)
+    sparkContext.addJar(this.jar)
   ]);
 }
 
