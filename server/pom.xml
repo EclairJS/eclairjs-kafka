@@ -7,6 +7,7 @@
 
   <name>EclairJS Kafka Streaming</name>
   <description>EclairJS Module for Kafka and MessageHub</description>
+  <url>https://github.com/EclairJS/eclairjs-swift</url>
 
   <licenses>
     <license>
@@ -175,6 +176,12 @@
             <goals>
               <goal>add-source</goal>
               <goal>compile</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>doc-jar</goal>
             </goals>
           </execution>
           <execution>

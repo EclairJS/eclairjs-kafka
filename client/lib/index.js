@@ -22,7 +22,7 @@
  */
 
 function KafkaUtils(obj) {
-  this.jar = obj.jar;
+  this.jar = obj.jar ? obj.jar : null;
   this.eclairjs = obj.eclairjs;
 
   if(process.env.VCAP_SERVICES) {
@@ -37,7 +37,7 @@ function KafkaUtils(obj) {
 }
 
 KafkaUtils.prototype.init = function(sparkContext) {
-  return this.eclairjs.addJar(this.jar);
+  return (this.jar == null) ? Promise.resolve(true) : this.eclairjs.addJar(this.jar);
 }
 
 KafkaUtils.prototype.createStream = function (ssc, zk, consumer_group, topic) {
