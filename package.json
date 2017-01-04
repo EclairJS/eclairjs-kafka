@@ -4,6 +4,9 @@
   "description": "EclairJS Kafka Bindings",
   "author": "EclairJS <info@eclairjs.org>",
   "main": "./client/lib/index.js",
+  "files": [
+    "client/lib"
+  ],
   "license": "Apache-2.0",
   "engine": "node >= 0.12"
 }
