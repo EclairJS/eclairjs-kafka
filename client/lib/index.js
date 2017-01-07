@@ -49,7 +49,7 @@ KafkaUtils.prototype.init = function(sparkContext) {
   ]);
 }
 
-KafkaUtils.prototype.createStream = function (ssc, zk, consumer_group, topic) {
+KafkaUtils.prototype.createStream = function (ssc, consumer_group, brokers, topic) {
   return this.eclairjs.executeMethod({
     target: KafkaUtils,
     method: 'createStream',
